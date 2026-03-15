@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nano Gas Factory - 동적 화학 반응</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="canvas-root">
+        <!-- MIDDLE: Animation Area (Moved to top as header is removed) -->
+        <main class="canvas-middle">
+            <div class="factory-area">
+                <div class="conveyor-line line-a"></div>
+                <div class="conveyor-line line-b"></div>
+                <div class="factory" id="factory">
+                    <div class="factory-glow"></div>
+                    <!-- 기계 상단 조립 설명서 (Blueprint) -->
+                    <div id="factory-blueprint" class="factory-blueprint"></div>
+                </div>
+                <div class="conveyor-line line-out"></div>
+                <div id="particle-container"></div>
+                
+                <!-- NEW: Global Atom Layer for True Continuity -->
+                <svg id="global-atom-layer" width="1920" height="900" viewBox="0 0 1920 900" style="position:absolute; top:0; left:0; pointer-events:none; z-index:60; overflow:visible;"></svg>
+
+                <!-- NEW: Mass Analysis Cards Area (Centered under Machine) -->
+                <div id="mass-equation-display" class="equation-area-canvas">
+                    <!-- Cards injected by script.js -->
+                </div>
+            </div>
+        </main>
+
+        <!-- Reaction Selector (Floating or Integrated) -->
+        <div class="floating-selector">
+             <select id="reaction-selector">
+                 <option value="hydrogen">물 합성 반응</option>
+                 <option value="methane">메테인 연소 반응</option>
+                 <option value="hcl_synthesis">염화 수소 합성</option>
+                 <option value="ammonia_synthesis">암모니아 합성 반응</option>
+             </select>
+        </div>
+
+        <!-- 액션 컨트롤 (오른쪽 하단 배치) -->
+        <div id="action-controls" class="controls-floating"></div>
+    </div>
+
+    <!-- 커스텀 모달 (경고용) -->
+    <div id="custom-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 id="modal-title">알림</h2>
+            <p id="modal-message">내용</p>
+            <button id="modal-close-btn" class="modal-btn">확인</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Bind dynamic reaction switcher
+        document.getElementById('reaction-selector').addEventListener('change', (e) => {
+            renderUIForReaction(e.target.value);
+        });
+    </script>
+</body>
+</html>
