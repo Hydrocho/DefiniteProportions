@@ -877,3 +877,17 @@ button:disabled {
     filter: brightness(1.1);
     transform: scale(1.05);
 }
+.copyright-info {
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+    opacity: 0.6;
+    font-weight: 600;
+    pointer-events: none;
+    z-index: 500;
+}
+
+.copyright-info { color: #ffffff !important; opacity: 1; }
+

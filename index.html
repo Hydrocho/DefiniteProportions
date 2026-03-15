@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="canvas-root">
         <!-- MIDDLE: Animation Area (Moved to top as header is removed) -->
@@ -21,9 +23,10 @@
                 </div>
                 <div class="conveyor-line line-out"></div>
                 <div id="particle-container"></div>
-                
+
                 <!-- NEW: Global Atom Layer for True Continuity -->
-                <svg id="global-atom-layer" width="1920" height="900" viewBox="0 0 1920 900" style="position:absolute; top:0; left:0; pointer-events:none; z-index:60; overflow:visible;"></svg>
+                <svg id="global-atom-layer" width="1920" height="900" viewBox="0 0 1920 900"
+                    style="position:absolute; top:0; left:0; pointer-events:none; z-index:60; overflow:visible;"></svg>
 
                 <!-- NEW: Mass Analysis Cards Area (Centered under Machine) -->
                 <div id="mass-equation-display" class="equation-area-canvas">
@@ -34,16 +37,19 @@
 
         <!-- Reaction Selector (Floating or Integrated) -->
         <div class="floating-selector">
-             <select id="reaction-selector">
-                 <option value="hydrogen">물 합성 반응</option>
-                 <option value="methane">메테인 연소 반응</option>
-                 <option value="hcl_synthesis">염화 수소 합성</option>
-                 <option value="ammonia_synthesis">암모니아 합성 반응</option>
-             </select>
+            <select id="reaction-selector">
+                <option value="hydrogen">물 합성 반응</option>
+                <option value="methane">메테인 연소 반응</option>
+                <option value="hcl_synthesis">염화 수소 합성</option>
+                <option value="ammonia_synthesis">암모니아 합성 반응</option>
+            </select>
         </div>
 
         <!-- 액션 컨트롤 (오른쪽 하단 배치) -->
         <div id="action-controls" class="controls-floating"></div>
+
+        <!-- Copyright Info (왼쪽 하단) -->
+        <div class="copyright-info">Copyright &copy; 조광근</div>
     </div>
 
     <!-- 커스텀 모달 (경고용) -->
@@ -63,4 +69,5 @@
         });
     </script>
 </body>
+
 </html>
